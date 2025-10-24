@@ -1,4 +1,3 @@
-// REPLACE THE ENTIRE CONTENTS OF THIS FILE
 import { Sparkles, DollarSign, Users, Wallet, TrendingUp, Receipt, CreditCard, PieChart } from "lucide-react";
 
 const AuthLayout = ({ children }) => {
