@@ -1,3 +1,4 @@
+// REPLACE THE ENTIRE CONTENTS OF THIS FILE
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
@@ -26,7 +27,7 @@ export default function RootLayout({ children }) {
           appearance={{
             baseTheme: undefined,
             variables: {
-              colorPrimary: '#0066FF', // Deep Blue
+              colorPrimary: '#4F46E5', // Deep Indigo/Violet - NEW COLOR
               colorTextOnPrimaryBackground: '#ffffff',
               colorBackground: '#ffffff',
               colorInputBackground: '#ffffff',
@@ -35,7 +36,7 @@ export default function RootLayout({ children }) {
             },
             elements: {
               formButtonPrimary: 
-                'bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-200',
+                'bg-gradient-to-r from-indigo-600 to-pink-500 hover:from-indigo-700 hover:to-pink-600 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-200', // NEW GRADIENT
               card: 'shadow-none border-0',
               headerTitle: 'text-2xl font-bold',
               headerSubtitle: 'text-muted-foreground',
