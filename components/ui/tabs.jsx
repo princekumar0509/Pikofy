@@ -1,63 +1,279 @@
-// REPLACE THE ENTIRE CONTENTS OF THIS FILE
-"use client"
+@import "tailwindcss";
+@import "tw-animate-css";
 
-import * as React from "react"
-import * as TabsPrimitive from "@radix-ui/react-tabs"
+@custom-variant dark (&:is(.dark *));
 
-import { cn } from "@/lib/utils"
-
-function Tabs({
-  className,
-  ...props
-}) {
-  return (
-    <TabsPrimitive.Root
-      data-slot="tabs"
-      className={cn("flex flex-col gap-4", className)} // Increased gap for spacing
-      {...props} />
-  );
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-function TabsList({
-  className,
-  ...props
-}) {
-  return (
-    <TabsPrimitive.List
-      data-slot="tabs-list"
-      className={cn(
-        "bg-secondary text-muted-foreground inline-flex h-12 w-full items-center justify-center rounded-xl p-1 shadow-inner border border-border", // Increased size and added border/shadow for depth
-        className
-      )}
-      {...props} />
-  );
+:root {
+  --radius: 1rem; /* Significantly larger border radius */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.1 0 0); /* Higher foreground contrast */
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.1 0 0);
+  --primary: 260 10% 30%; /* Darker Indigo/Violet */
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.95 0 0); /* Lighter secondary */
+  --secondary-foreground: 260 10% 30%;
+  --muted: oklch(0.95 0 0);
+  --muted-foreground: oklch(0.5 0 0);
+  --accent: oklch(0.95 0 0);
+  --accent-foreground: 260 10% 30%;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.8 0 0); /* Stronger light border */
+  --input: oklch(0.9 0 0);
+  --ring: oklch(0.4 0 0); /* Darker ring for contrast */
+  --chart-1: 290 0.1 40;
+  --chart-2: 340 0.1 60;
+  --chart-3: 40 0.1 70;
+  --chart-4: 210 0.1 50;
+  --chart-5: 140 0.1 45;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: 260 10% 30%;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.95 0 0);
+  --sidebar-accent-foreground: 260 10% 30%;
+  --sidebar-border: oklch(0.8 0 0);
+  --sidebar-ring: oklch(0.4 0 0);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.1 0 0);
 }
 
-function TabsTrigger({
-  className,
-  ...props
-}) {
-  return (
-    <TabsPrimitive.Trigger
-      data-slot="tabs-trigger"
-      className={cn(
-        "data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg data-[state=active]:scale-[1.01] hover:bg-secondary/80 focus-visible:ring-primary/50 focus-visible:outline-none dark:data-[state=active]:bg-primary dark:data-[state=active]:text-primary-foreground text-foreground flex-1 items-center justify-center gap-1.5 rounded-lg border-2 border-transparent px-4 py-2 text-base font-semibold whitespace-nowrap transition-all duration-300 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5", // Major style change: Full color fill, bolder font, larger size
-        className
-      )}
-      {...props} />
-  );
+.dark {
+  --background: oklch(0.1 0 0); /* Darker background */
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.15 0 0); /* Darker card for contrast */
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.15 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.9 0 0); 
+  --primary-foreground: oklch(0.1 0 0);
+  --secondary: oklch(0.2 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.2 0 0);
+  --muted-foreground: oklch(0.6 0 0);
+  --accent: oklch(0.2 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(0.3 0 0); /* Stronger dark border */
+  --input: oklch(0.2 0 0);
+  --ring: oklch(0.5 0 0);
+  --chart-1: 290 0.25 60; 
+  --chart-2: 340 0.3 70;
+  --chart-3: 40 0.3 75;
+  --chart-4: 210 0.2 60;
+  --chart-5: 140 0.2 55;
+  --sidebar: oklch(0.15 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.9 0 0);
+  --sidebar-primary-foreground: oklch(0.1 0 0);
+  --sidebar-accent: oklch(0.2 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.3 0 0);
+  --sidebar-ring: oklch(0.5 0 0);
 }
 
-function TabsContent({
-  className,
-  ...props
-}) {
-  return (
-    <TabsPrimitive.Content
-      data-slot="tabs-content"
-      className={cn("flex-1 outline-none mt-2", className)}
-      {...props} />
-  );
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-export { Tabs, TabsList, TabsTrigger, TabsContent }
+@utility gradient {
+  @apply bg-gradient-to-r from-indigo-600 to-pink-500;
+}
+
+@utility gradient-title {
+  @apply gradient font-extrabold tracking-tight text-transparent bg-clip-text pb-1 pr-2;
+}
+
+@utility hard-shadow {
+  /* New hard shadow utility for a distinct look */
+  box-shadow: 4px 4px 0px var(--border);
+  @apply transition-transform;
+}
+
+.hard-shadow:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px var(--border);
+}
+
+
+/* Custom animations for improved UX */
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float-medium {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-15px) translateX(10px);
+  }
+}
+
+@keyframes float-fast {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-25px) translateX(-10px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes pulse-slower {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in-up {
+  animation: slide-in-up 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out;
+}
+
+.animate-fade-in-delay {
+  animation: fade-in 0.8s ease-out 0.3s both;
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 6s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 5s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+.animate-pulse-slower {
+  animation: pulse-slower 6s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
