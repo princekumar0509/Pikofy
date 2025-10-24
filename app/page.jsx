@@ -1,4 +1,4 @@
-]"use client";
+"use client";
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -345,7 +345,7 @@ export default function LandingPage() {
               />
             </div>
             <p className="text-sm text-muted-foreground font-medium">
-              © {new Date().getFullYear()} Pikofy. All rights reserved.
+              © {new Date().getFullYear()} Equinex. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm font-medium text-muted-foreground">
               <Link href="#" className="hover:text-foreground transition-colors">
