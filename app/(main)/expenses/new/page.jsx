@@ -1,4 +1,3 @@
-// REPLACE THE ENTIRE CONTENTS OF THIS FILE
 "use client";
 
 import { useState } from "react";
