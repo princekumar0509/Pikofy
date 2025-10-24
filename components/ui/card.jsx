@@ -1,3 +1,4 @@
+// REPLACE THE ENTIRE CONTENTS OF THIS FILE
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
@@ -10,7 +11,7 @@ function Card({
     <div
       data-slot="card"
       className={cn(
-        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
+        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border-2 border-foreground", // Increased border to 2 and set border color to foreground for high contrast
         className
       )}
       {...props} />
@@ -39,7 +40,7 @@ function CardTitle({
   return (
     <div
       data-slot="card-title"
-      className={cn("leading-none font-semibold", className)}
+      className={cn("leading-none font-extrabold text-xl", className)} // Used font-extrabold and increased size for more impact
       {...props} />
   );
 }
