@@ -1,3 +1,4 @@
+// REPLACE THE ENTIRE CONTENTS OF THIS FILE
 "use client";
 
 import React from "react";
@@ -34,13 +35,13 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-6">
             <Link
               href="#features"
-              className="text-sm font-medium hover:text-blue-600 transition"
+              className="text-sm font-medium hover:text-indigo-600 transition"
             >
               Features
             </Link>
             <Link
               href="#how-it-works"
-              className="text-sm font-medium hover:text-blue-600 transition"
+              className="text-sm font-medium hover:text-indigo-600 transition"
             >
               How It Works
             </Link>
@@ -52,7 +53,7 @@ export default function Header() {
             <Link href="/dashboard">
               <Button
                 variant="outline"
-                className="hidden md:inline-flex items-center gap-2 hover:text-blue-600 hover:border-blue-600 transition"
+                className="hidden md:inline-flex items-center gap-2 hover:text-indigo-600 hover:border-indigo-600 transition border-2 border-foreground hard-shadow" // Applied hard-shadow and stronger border
               >
                 <LayoutDashboard className="h-4 w-4" />
                 Dashboard
@@ -80,7 +81,7 @@ export default function Header() {
             </SignInButton>
 
             <SignUpButton>
-              <Button className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 border-none">
+              <Button className="bg-gradient-to-r from-indigo-600 to-pink-500 hover:from-indigo-700 hover:to-pink-600 border-2 border-foreground hard-shadow"> // Applied hard-shadow and stronger border
                 Get Started
               </Button>
             </SignUpButton>
