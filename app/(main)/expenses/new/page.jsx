@@ -1,3 +1,4 @@
+// REPLACE THE ENTIRE CONTENTS OF THIS FILE
 "use client";
 
 import { useState } from "react";
@@ -15,7 +16,7 @@ export default function NewExpensePage() {
     <div className="container max-w-4xl mx-auto py-8 px-4">
       <div className="mb-8 text-center">
         <div className="flex items-center justify-center gap-2 mb-3">
-          <div className="p-2.5 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 shadow-lg">
+          <div className="p-2.5 rounded-xl bg-gradient-to-br from-indigo-600 to-pink-500 shadow-lg border-2 border-foreground hard-shadow">
             <Plus className="h-7 w-7 text-white" />
           </div>
         </div>
@@ -27,13 +28,13 @@ export default function NewExpensePage() {
         </p>
       </div>
 
-      <Card className="border-2 shadow-xl">
+      <Card className="border-2 border-foreground hard-shadow">
         <CardContent className="p-6 md:p-8">
           <Tabs className="pb-2" value={activeTab} onValueChange={setActiveTab}>
-            <TabsList className="grid w-full grid-cols-2 h-14 p-1.5 bg-muted/50 mb-4 rounded-xl">
+            <TabsList className="grid w-full grid-cols-2 h-14 p-1.5 bg-muted/50 mb-4 rounded-xl border border-border">
               <TabsTrigger 
                 value="individual" 
-                className="text-base font-semibold flex items-center gap-2 data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-600 data-[state=active]:to-cyan-500 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-[1.02] transition-all duration-200"
+                className="text-base font-semibold flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg data-[state=active]:scale-[1.01] transition-all duration-300"
               >
                 <User className="h-5 w-5" />
                 <span className="hidden sm:inline">Individual</span>
@@ -41,7 +42,7 @@ export default function NewExpensePage() {
               </TabsTrigger>
               <TabsTrigger 
                 value="group" 
-                className="text-base font-semibold flex items-center gap-2 data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-600 data-[state=active]:to-cyan-500 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-[1.02] transition-all duration-200"
+                className="text-base font-semibold flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg data-[state=active]:scale-[1.01] transition-all duration-300"
               >
                 <Users className="h-5 w-5" />
                 Group
@@ -49,12 +50,12 @@ export default function NewExpensePage() {
             </TabsList>
             
             <TabsContent value="individual" className="mt-0">
-              {/* Visual indicator */}
-              <div className="mb-6 p-3 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20 border-l-4 border-blue-600 rounded-lg">
+              {/* Visual indicator - using indigo/purple tones */}
+              <div className="mb-6 p-3 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-950/20 dark:to-purple-950/20 border-l-4 border-indigo-600 rounded-lg">
                 <div className="flex items-center gap-2 text-sm">
-                  <User className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-                  <span className="font-semibold text-blue-900 dark:text-blue-100">Individual Expense</span>
-                  <span className="text-blue-700 dark:text-blue-300">- Split with one person</span>
+                  <User className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
+                  <span className="font-semibold text-indigo-900 dark:text-indigo-100">Individual Expense</span>
+                  <span className="text-indigo-700 dark:text-indigo-300">- Split with one person</span>
                 </div>
               </div>
               
@@ -67,12 +68,12 @@ export default function NewExpensePage() {
             </TabsContent>
             
             <TabsContent value="group" className="mt-0">
-              {/* Visual indicator */}
-              <div className="mb-6 p-3 bg-gradient-to-r from-cyan-50 to-indigo-50 dark:from-cyan-950/20 dark:to-indigo-950/20 border-l-4 border-cyan-600 rounded-lg">
+              {/* Visual indicator - using pink/rose tones */}
+              <div className="mb-6 p-3 bg-gradient-to-r from-pink-50 to-rose-50 dark:from-pink-950/20 dark:to-rose-950/20 border-l-4 border-pink-600 rounded-lg">
                 <div className="flex items-center gap-2 text-sm">
-                  <Users className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
-                  <span className="font-semibold text-cyan-900 dark:text-cyan-100">Group Expense</span>
-                  <span className="text-cyan-700 dark:text-cyan-300">- Split with multiple people</span>
+                  <Users className="h-4 w-4 text-pink-600 dark:text-pink-400" />
+                  <span className="font-semibold text-pink-900 dark:text-pink-100">Group Expense</span>
+                  <span className="text-pink-700 dark:text-pink-300">- Split with multiple people</span>
                 </div>
               </div>
               
@@ -88,14 +89,14 @@ export default function NewExpensePage() {
       </Card>
 
       {/* Helpful tips section */}
-      <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-xl border-2 border-blue-200/50 dark:border-blue-800/50">
+      <div className="mt-8 p-6 bg-gradient-to-r from-indigo-50 to-pink-50 dark:from-indigo-950/20 dark:to-pink-950/20 rounded-xl border-2 border-indigo-200/50 dark:border-indigo-800/50 hard-shadow">
         <div className="flex items-start gap-3">
-          <Sparkles className="h-5 w-5 text-blue-600 dark:text-blue-400 mt-0.5 flex-shrink-0" />
+          <Sparkles className="h-5 w-5 text-indigo-600 dark:text-indigo-400 mt-0.5 flex-shrink-0" />
           <div>
-            <h3 className="font-semibold text-blue-900 dark:text-blue-100 mb-2">
+            <h3 className="font-semibold text-indigo-900 dark:text-indigo-100 mb-2">
               Quick Tips
             </h3>
-            <ul className="space-y-1.5 text-sm text-blue-800 dark:text-blue-200">
+            <ul className="space-y-1.5 text-sm text-indigo-800 dark:text-indigo-200">
               <li>• <strong>Individual expenses</strong> are perfect for splitting bills with one person</li>
               <li>• <strong>Group expenses</strong> let you split costs among multiple people at once</li>
               <li>• Choose between equal splits, percentage-based, or exact amounts</li>
